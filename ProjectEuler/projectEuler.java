@@ -1136,3 +1136,22 @@ onethousand = 11
 		}	
 		return true;
 	}
+
+//Problem 28
+	public static long problem28(int gridSize){
+		long total = 1, runner = 1;
+		int jumps = 1;
+		int limit = (int)Math.ceil(gridSize/2)+1;
+		for(int loop = 1;loop < limit; loop++){
+			jumps = loop+loop;
+			runner += jumps;
+			total += runner;
+			runner += jumps;
+			total += runner;
+			runner += jumps;
+			total += runner;
+			runner += jumps;
+			total += runner;
+		}
+		return total;
+	}
