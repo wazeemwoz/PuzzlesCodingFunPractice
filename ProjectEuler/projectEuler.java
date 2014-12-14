@@ -1109,3 +1109,30 @@ onethousand = 11
 		return longest;
 	}
 	
+// problem 27
+	public static long problem27(){
+		int n, largest = 0;
+		long coefficient = 0;
+		for(int a = 1000; a > -1001; a--){
+			for(int b = 1000; b > -1001; b--){
+				for(n = 0; isPrime((n*n)+(a*n)+b); n++){}
+				if(n > largest){
+					largest = n;
+					coefficient = a*b;
+				}
+			}
+		}
+		return coefficient;
+	}
+		
+	public static boolean isPrime(long n){
+		if(n < 1)
+			return false;
+			
+		long limit =  (long)Math.ceil(Math.sqrt(n));
+		for(int m = 2; m < limit; m++){
+			if(n % m == 0)
+				return false;
+		}	
+		return true;
+	}
