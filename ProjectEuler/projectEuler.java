@@ -1155,3 +1155,30 @@ onethousand = 11
 		}
 		return total;
 	}
+	
+//problem 29
+/*
+	Again cheating due to the BigInteger class :(
+*/
+/* package whatever; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+import java.math.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		Set<BigInteger> distinct = new HashSet<BigInteger>();
+		for(int a = 2; a <= 100; a++){
+			for(int b = 2; b <= 100; b++){
+				distinct.add((new BigInteger(Integer.toString(a))).pow(b));
+			}
+		}
+		System.out.println(distinct.size());
+	}
+}
